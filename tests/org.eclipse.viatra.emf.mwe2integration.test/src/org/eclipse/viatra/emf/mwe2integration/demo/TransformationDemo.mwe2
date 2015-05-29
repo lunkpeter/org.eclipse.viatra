@@ -1,0 +1,41 @@
+module org.eclipse.viatra.emf.mwe2orchestrator.transdemo
+
+import org.eclipse.viatra.emf.mwe2integration.*
+import org.eclipse.viatra.emf.mwe2integration.mwe2impl.*
+import org.eclipse.viatra.emf.mwe2integration.demo.*
+
+//The channels between the transformation steps are defined here
+var chainStartChannel = MWE2Channel {}
+var chainEndChannel = MWE2Channel {}
+
+var BatchChannel = MWE2Channel {}
+var EventDrivenChannel = MWE2Channel {}
+
+//The workflow and components are defined in the usual MWE2 fashion
+Workflow {
+	//Add an MWE2TransformationChain component
+	component = MWE2TransformationChain {
+		//define the start and end channels of the chain
+		startChannel = MWE2TargetChannel{channel = chainStartChannel}
+		endChannel = MWE2ListeningChannel{channel = chainEndChannel}
+
+		//define individual transformation steps
+		transformationStep = EventDrivenTransformationStep {
+			//register listening channels to which this step listens
+			//Add the chainStartChannel as listening channel, this way the transformation 
+			//chain can start the step sequence
+			listeningChannel = MWE2ListeningChannel{ channel = chainStartChannel}
+			listeningChannel = MWE2ListeningChannel{ channel = EventDrivenChannel}
+			//register target channels to which this step sends events
+			targetChannel = MWE2TargetChannel{channel = BatchChannel}
+		}
+		
+		transformationStep = BatchTransformationStep {
+			listeningChannel = MWE2ListeningChannel{ channel = BatchChannel}
+			//Add the chainEndChannel as target channel, this way the transformation 
+			//chain when to finish its execution.
+			targetChannel = MWE2TargetChannel{ channel = chainEndChannel}
+		}
+	}
+	//You can add additional regular MWE2 components here
+}
