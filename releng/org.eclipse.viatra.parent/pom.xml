@@ -25,7 +25,7 @@
 		<jacoco.version>0.6.3.201306030806</jacoco.version>
 		<jacoco.targetdir>${project.basedir}/../../target</jacoco.targetdir>
 		<xtend.compiler.version>2.8.1</xtend.compiler.version>
-		<incquery.repository.url>http://download.eclipse.org/incquery/updates/integration</incquery.repository.url>
+		<incquery.repository.url>http://download.eclipse.org/incquery/updates-extra/integration</incquery.repository.url>
 		<incquery.compiler.version>1.1.0-SNAPSHOT</incquery.compiler.version>
 		<!-- Sonar -->
 		<sonar.version>3.6</sonar.version>
@@ -191,6 +191,10 @@
 				<module>../../plugins/org.eclipse.viatra.dse.genetic</module>
 				<module>../../plugins/org.eclipse.viatra.dse.monitor</module>
 				<module>../../plugins/org.eclipse.viatra.emf.mwe2integration</module>
+				<module>../../plugins/org.eclipse.viatra.emf.mwe2integration.debug</module>
+				<module>../../plugins/org.eclipse.viatra.emf.runtime.debug</module>
+				<module>../../plugins/org.eclipse.viatra.emf.runtime.debug.ui</module>
+				<module>../../plugins/org.eclipse.viatra.emf.runtime.tracer</module>
 				<module>../../tests/org.eclipse.viatra.cep.core.tests.compiler</module>
 				<module>../../tests/org.eclipse.viatra.cep.core.tests.compiler.testdata</module>
 				<module>../../tests/org.eclipse.viatra.cep.vepl.tests</module>

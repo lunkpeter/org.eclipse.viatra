@@ -16,19 +16,29 @@ import org.eclipse.viatra.emf.runtime.adapter.ITransformationAdapter
 
 /**
  * Abstract transformation Adapter class. Newly implemented VIATRA transformation adapters should extend this class.
+ * 
+ * @author Peter Lunk
  */
 abstract class AbstractTransformationAdapter implements ITransformationAdapter{
 	
-	override afterFiring(Activation<?> activation) {}
+	override afterFiring(Activation<?> activation) {
+		activation
+	}
 	
-	override afterSchedule(ConflictSet conflictSet) {}
+	override afterSchedule(ConflictSet conflictSet) {
+		conflictSet
+	}
 	
-	override onFiring(Activation<?> activation) {}
+	override beforeFiring(Activation<?> activation) {
+		activation
+	}
 	
-	override onSchedule(ConflictSet conflictSet) {}
+	override beforeSchedule(ConflictSet conflictSet) {
+		conflictSet
+	}
 	
-	override onTransformationDisposed() {}
+	override afterTransformation() {}
 	
-	override onTransformationInit() {}
+	override beforeTransformation() {}
 	
 }

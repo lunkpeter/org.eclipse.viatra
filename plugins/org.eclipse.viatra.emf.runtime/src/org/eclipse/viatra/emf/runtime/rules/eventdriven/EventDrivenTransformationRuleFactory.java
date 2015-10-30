@@ -78,9 +78,13 @@ public class EventDrivenTransformationRuleFactory {
 		}
 	}
 
-	public <Match extends IPatternMatch, Matcher extends IncQueryMatcher<Match>> EventDrivenTransformationBuilder<Match, Matcher> createRule() {
-		return new EventDrivenTransformationBuilder<Match, Matcher>();
+	public <Match extends IPatternMatch, Matcher extends IncQueryMatcher<Match>> EventDrivenTransformationBuilder<Match, Matcher> createRule(String name) {
+		return new EventDrivenTransformationBuilder<Match, Matcher>().name(name);
 	}
+	
+	public <Match extends IPatternMatch, Matcher extends IncQueryMatcher<Match>> EventDrivenTransformationBuilder<Match, Matcher> createRule() {
+        return new EventDrivenTransformationBuilder<Match, Matcher>();
+    }
 
 	private <Match extends IPatternMatch, Matcher extends IncQueryMatcher<Match>> EventDrivenTransformationRule<Match, Matcher> createRule(
 			String name, IQuerySpecification<Matcher> precondition,

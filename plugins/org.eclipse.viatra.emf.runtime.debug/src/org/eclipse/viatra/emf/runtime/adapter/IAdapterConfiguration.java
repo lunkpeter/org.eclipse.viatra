@@ -14,7 +14,8 @@ import java.util.List;
 
 /**
  * Interface that defines the methods of VIATRA transformation adapter configurations. 
- * @author Lunk Péter
+ * 
+ * @author Peter Lunk
  */
 public interface IAdapterConfiguration {
     public List<ITransformationAdapter> getAdapters();
