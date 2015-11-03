@@ -28,6 +28,11 @@
 <repository location="http://download.eclipse.org/modeling/tmf/xtext/updates/composite/milestones"/>
 </location>
 <location includeAllPlatforms="false" includeConfigurePhase="false" includeMode="planner" includeSource="true" type="InstallableUnit">
+<unit id="org.eclipse.gef4.geometry.feature.group" version="0.1.0.201406280202"/>
+<unit id="org.eclipse.gef4.zest.sdk.feature.group" version="0.1.0.201406280202"/>
+<repository location="http://download.eclipse.org/incquery/updates-extra/release"/>
+</location>
+<location includeAllPlatforms="false" includeConfigurePhase="false" includeMode="planner" includeSource="true" type="InstallableUnit">
 <unit id="org.eclipse.emf.transaction.sdk.feature.group" version="1.5.1.v20110823-1800-777T19A_WsXmjNatPxcrPm1rOKlH"/>
 <repository location="http://download.eclipse.org/releases/indigo"/>
 </location>

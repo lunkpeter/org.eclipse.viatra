@@ -21,6 +21,7 @@ import org.eclipse.incquery.runtime.evm.api.Activation
 import org.eclipse.incquery.viewers.runtime.model.IncQueryViewerDataModel
 import org.eclipse.incquery.viewers.runtime.model.ViewerDataFilter
 import org.eclipse.incquery.viewers.runtime.model.ViewerState.ViewerStateFeature
+import org.eclipse.incquery.viewers.runtime.zest.IncQueryGraphViewers
 import org.eclipse.swt.SWT
 import org.eclipse.swt.events.SelectionAdapter
 import org.eclipse.swt.events.SelectionEvent
@@ -32,7 +33,7 @@ import org.eclipse.swt.widgets.Label
 import org.eclipse.swt.widgets.Shell
 import org.eclipse.swt.widgets.Text
 import org.eclipse.viatra.emf.runtime.debug.TransformationDebugger.DebuggerActions
-import org.eclipse.viatra.emf.runtime.debug.controller.IDebugController;
+import org.eclipse.viatra.emf.runtime.debug.controller.IDebugController
 
 /**
  * Debugger UI implementation that utilizes the EMF IncQuery viewers framework
